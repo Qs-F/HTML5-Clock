@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body onload="showClock2();">
+    <img src="back10.jpg" class="background" id="background">
+    <p id="RealtimeClockArea1" class="clock days">Now Loading...</p>
+    <div class="contents">
+      <span id="hours" class="time"></span>
+      <span id="minutes" class="time"></span>
+      <span id="seconds" class="time"></span>
+      <div class="wrapper">
+        <span class="r">HOURS</span>
+        <span class="r">MINUTES</span>
+        <span class="r">SECONDS</span>
+      </div>
+    </div>
+    <footer>Designed by Q'sF.</footer>
+    <!--<script src="main.js"></script>-->
+    <script>setInterval('showClock2()',1000);</script>
+  </body>
+</html>
