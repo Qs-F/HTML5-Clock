@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
+    <script src="./jquery.justify.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.clock').justify();
+      });
+    </script>
+    <style>
+* {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+::selection {
+  background: rgba(0,0,0,0);
+}
+
+.contents {
+  height: 250px;
+  padding: calc(50vh - 250px) 10% 0 10%;
+  text-align: justify;
+}
+
+.clock {
+  font-family: 'Myriad Set Pro';
+  font-size: 100px;
+  width: 100%;
+  text-align: right;
+  color: rgb(255,255,255);
+}
+
+.time {
+	box-sizing: border-box;
+  font-family: 'Myriad Set Pro','HelveticaNeue-UltraLight';
+  font-weight: 100;
+  font-size: 200px;
+  width: 100%;
+  text-align: center;
+  color: rgb(255,255,255);
+  letter-spacing: 20px;
+  padding-left: 20px;
+  -webkit-user-select: none;
+  user-select: none;
+  display: block;
+  width: calc(100% / 3);
+  float: left;
+}
+
+.days {
+  font-size: 30px;
+  display: block;
+	text-indent: 2em;
+  letter-spacing: 2em !important;
+  text-align: center;
+  margin: 0 !important;
+  font-weight: bold;
+  padding: 20px 0 20px 0;
+  background: rgba(255,255,255,.3);
+  line-height: 2em;
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  width: 240vmin;
+  margin: -10px;
+  -webkit-filter: blur(15px);
+  clear: both;
+}
+
+.r {
+  float: left;
+  text-align: center;
+  display: block;
+  color: rgb(255,255,255);
+  width: calc( 100% / 3);
+  font-weight: bold;
+  font-family: 'Myriad Set Pro','Skia';
+  letter-spacing: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.wrapper {
+  clear: both;
+}
+    </style>
+  </head>
+  <body>
+    <img src="./back11.jpg" class="background">
+    <p id="RealtimeClockArea1" class="clock days">Now Loading...</p>
+    <div class="contents">
+        <span id="hours" class="time"></span>
+        <span id="minutes" class="time"></span>
+        <span id="seconds" class="time"></span>
+      <div class="wrapper">
+        <span class="r">HOURS</span>
+        <span class="r">MINUTES</span>
+        <span class="r">SECONDS</span>
+      </div>
+    </div>
+
+
+<script type="text/javascript">
+function set2fig(num) {
+   // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+   var ret;
+   if( num < 10 ) { ret = "0" + num; }
+   else { ret = num; }
+   return ret;
+}
+function showClock2() {
+   var nowTime = new Date();
+   var month = set2fig( nowTime.getMonth()+1 );
+   var day = set2fig( nowTime.getDate() );
+   var nowHour = set2fig( nowTime.getHours() );
+   var nowMin = set2fig( nowTime.getMinutes() );
+   var nowSec = set2fig( nowTime.getSeconds() );
+   var days = month + "/" + day;
+   var msg = nowHour + ":" + nowMin + ":" + nowSec;
+   document.getElementById("RealtimeClockArea1").innerHTML = days;
+   document.getElementById("hours").innerHTML = nowHour;
+   document.getElementById("minutes").innerHTML = nowMin;
+   document.getElementById("seconds").innerHTML = nowSec;
+}
+setInterval('showClock2()',1000);
+</script>
+  </body>
+</html>
