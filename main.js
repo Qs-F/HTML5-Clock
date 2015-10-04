@@ -14,6 +14,16 @@ window.onload = setInterval(function showClock2 () {
   document.getElementById("seconds").innerHTML = nowSec;
 },1000);
 
+
+window.addEventListener("load", function() {
+  document.getElementsByTagName("button")[0].addEventListener("click", bg, false);
+}, false);
+
+function bg() {
+  var backgroundId = 'back' + Math.floor( Math.random() * 12 ) + '.jpg';
+  document.getElementById("background").src = backgroundId;
+}
+
 window.onload = setInterval(function() {
   var backgroundId = 'back' + Math.floor( Math.random() * 12 ) + '.jpg';
   document.getElementById("background").src = backgroundId;

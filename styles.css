@@ -1,6 +1,6 @@
 /* CSS file placeholder. */
 * {
-  overflow: hidden;
+  /*overflow: hidden;*/
   margin: 0;
   padding: 0;
   cursor: default;
@@ -12,6 +12,17 @@
   background: rgba(0,0,0,0);
 }
 
+button {
+  background: rgba(255,255,255,.3);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: rgb(255,255,255) solid 2px;
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+}
+
 .contents {
   height: 250px;
   padding: calc(50vh - 250px) 10% 0 10%;
@@ -19,7 +30,7 @@
 }
 
 .clock {
-  font-family: 'Myriad Set Pro';
+  font-family: 'Myriad Set Pro', "Roboto";
   font-size: 100px;
   width: 100%;
   text-align: right;
@@ -28,7 +39,7 @@
 
 .time {
 	box-sizing: border-box;
-  font-family: 'Myriad Set Pro','HelveticaNeue-UltraLight';
+  font-family: 'Myriad Set Pro','HelveticaNeue-UltraLight', "Roboto";
   font-weight: 100;
   font-size: 200px;
   width: 100%;
@@ -72,7 +83,7 @@
   color: rgb(255,255,255);
   width: calc( 100% / 3);
   font-weight: bold;
-  font-family: 'Myriad Set Pro';
+  font-family: 'Myriad Set Pro', "Roboto";
   letter-spacing: 20px;
   padding-left: 20px;
   box-sizing: border-box;
